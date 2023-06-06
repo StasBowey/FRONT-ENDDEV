@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Печать на холсте</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"/>
+    <link rel="icon" href="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\image/logo.svg" type="image/x-icon">
+
+    <script src="main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ 
+    <script type="text/javascript">
+      $(function() {
+      $(window).scroll(function() {
+      if($(this).scrollTop() != 0) {
+      $('#toTop').fadeIn();
+      } else {
+      $('#toTop').fadeOut();
+      }
+      });
+      $('#toTop').click(function() {
+      $('body,html').animate({scrollTop:0},800);
+      });
+      });
+    </script>
+  </head>
+  <body>
+      <!-- НАЧАЛЬНАЯ -->
+      <div class="div">
+      <div class="div1">
+        <img class="child" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\rectangle-1@2x.png" />
+
+        <div class="div2">
+          <a class="holst-na-zakaz" href="https://vk.com/audios201360217" target="_blank">HOLST-NA-ZAKAZ</a>
+          
+          <a class="parent" href="https://vk.com/audios201360217" target="_blank">
+            <div class="div3">Портреты на холсте</div>
+            <img class="group-child" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-1.svg" />
+          </a>
+
+          <a class="a" href="https://vk.com/audios201360217" target="_blank">Наши работы</a>
+
+          <a class="group" href="https://vk.com/audios201360217" target="_blank">
+            <div class="div3">О компании</div>
+            <img class="group-item" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-1.svg" />
+          </a>
+
+          <a class="container" href="https://vk.com/audios201360217" target="_blank">
+            <div class="div3">Помощь</div>
+            <img class="group-inner" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-1.svg" />
+          </a>
+
+          <a class="a1" href="https://vk.com/audios201360217" target="_blank">Оплата и доставка</a>
+          <a class="a2" onclick="scrollToBlock2()" target="_blank">Контакты</a>
+
+          <button id="button">
+            <div id="item"></div>
+            <b id="b">Заказать звонок</b>
+          </button>
+
+          <button id="button1" onclick="scrollToBlock1()">
+            <div class="inner"></div>
+            <b class="b1">Заказ в один клик</b>
+          </button>
+          <img class="whatsapp-1-1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\whatsapp-1-1.svg" />
+
+          <a class="a3" href="tel:+7 968 603-85-98">+7 968 603-85-98</a>
+          <a class="zakazholst-na-zakazru" href="mailto:zakaz@holst-na-zakaz.ru"
+            >zakaz@holst-na-zakaz.ru</a
+          >
+          <img class="mail-1-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\mail-1.svg" />
+
+          <a class="a4" href="tel:+7 968 603-85-98">+7 (495) 115-38-16</a>
+          <img class="telephone-1-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\telephone-1.svg" />
+        </div>
+
+        <b id="b2"></b>
+        <div class="div6">
+          Изготовление заказа от 30 минут и бесплатная доставка по Москве
+        </div>
+        <button class="button2" onclick="scrollToBlock()">
+            <div class="rectangle-div"></div>
+            <b class="b3">Рассчитать стоимость</b>
+        </button>
+      </div>
+
+      <!-- РАСЧЁТ СТОИМОСТИ -->
+
+      <div id="div7">
+        <b class="b4">Расчет стоимости и оформление заказа</b>
+        <div class="ellipse-parent">
+          <div class="ellipse-div"></div>
+          <div class="div8">1</div>
+        </div>
+        <b class="b5">Выберите фото</b>
+        <input class="group-input" type="file"  />
+
+        <div class="ellipse-group">
+          <div class="ellipse-div"></div>
+          <div class="div8">2</div>
+        </div>
+        <b class="b6">Выберите размер (см)</b>
+        <b class="b7">30х40</b>
+        <div id="div10">40х60</div>
+        <div class="div11">50х70</div>
+        <div class="div12">60х90</div>
+        <div class="div13">120х80</div>
+        <div class="child1"></div>
+        <div class="group-div">
+          <img class="icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\3040-1@2x.png" />
+
+          <input id="rectangle-input" type="text" onkeydown="handleEnter(event, 'rectangle-input', 'group-child2')"/>
+
+        </div>
+        <div class="ellipse-container">
+          <div class="ellipse-div"></div>
+          <div class="div8">3</div>
+        </div>
+        <b class="b8">Выберите материал</b>
+        <button id="group-button" onclick="output()">
+          <b class="b9">Холст льняной</b>
+          <div class="group-child6"></div>
+        </button>
+        <button class="parent1" onclick="output2()">
+          <b class="b10">Без обработки</b>
+          <div class="group-child7"></div>
+        </button>
+        <button class="rectangle-parent" onclick="output12()">
+          <div class="group-child8"></div>
+          <b class="b11">Добавить багетную рамку</b>
+        </button>
+        <button class="parent2" onclick="output3()">
+          <b class="b12">Живопись</b>
+          <div class="group-child7"></div>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="parent3" onclick="output6()">
+          <b class="b13">Портрет маслом</b>
+          <div class="group-child7"></div>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="rectangle-group" onclick="output7()">
+          <div class="group-child13"></div>
+          <b class="b14">Портрет в образе</b>
+          <div class="ellipse-parent1">
+            <div class="group-child14"></div>
+            <div class="div17">?</div>
+          </div>
+        </button>
+        <button class="parent4" onclick="output4()">
+          <b class="b15">Дрим-арт</b>
+          <div class="group-child7"></div>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="parent5" onclick="output5()">
+          <b class="b16">Фотоколлаж</b>
+          <div class="group-child7"></div>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="parent6" onclick="output8()">
+          <b class="b17">Фотомазайка</b>
+          <div class="group-child7"></div>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="rectangle-container" onclick="output9()">
+          <div class="group-child7"></div>
+          <b class="love-is">Love-is</b>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="rectangle-parent1" onclick="output10()">
+          <div class="group-child7"></div>
+          <b class="b18">Покрытие лаком</b>
+          <div class="ellipse-parent1">
+            <div class="group-child10"></div>
+            <div class="div15">?</div>
+          </div>
+        </button>
+        <button class="rectangle-parent2" onclick="output11()">
+          <div class="group-child25"></div>
+          <b class="d-">Покрытие 3D-гелем</b>
+          <div class="ellipse-parent9">
+            <div class="group-child14"></div>
+            <div class="div17">?</div>
+          </div>
+        </button>
+        <div class="ellipse-parent10">
+          <div class="group-child10"></div>
+          <div class="div24">?</div>
+        </div>
+        <button class="rectangle-parent3" onclick="output1()">
+          <div class="group-child28"></div>
+          <b class="b19">Холст натуральный</b>
+          <div class="ellipse-parent11">
+            <div class="group-child14"></div>
+            <div class="div17">?</div>
+          </div>
+        </button>
+        <div class="ellipse-parent12">
+          <div class="ellipse-div"></div>
+          <div class="div8">4</div>
+        </div>
+        <div class="ellipse-parent13">
+          <div class="ellipse-div"></div>
+          <div class="div8">5</div>
+        </div>
+        <div class="ellipse-parent14">
+          <div class="ellipse-div"></div>
+          <div class="div8">6</div>
+        </div>
+        <b class="b20">Дизайн-обработка</b>
+        <b class="b21">Покрытие холста</b>
+        <b class="b22">Багетные рамки</b>
+        <b class="b23">Багетные рамки</b>
+        <div class="child2"></div>
+        <div class="div29">Стоимость вашего заказа:</div>
+        <b class="b24">0 руб.</b>
+        <div class="c-0">Cтарая цена: 0 руб.</div>
+        <div class="div30">
+          <p class="p">Доставим бесплатно по Москве в</p>
+          <p class="p">пределах пешей доступности от метро</p>
+        </div>
+        <b id="b25">Завершите оформление заказа</b>
+        <div class="child3"></div>
+        <input class="input" type="file"  />
+
+        <div class="parent7">
+          <div class="div31">Портрет в образе</div>
+          <div class="d-1">Покрытие 3D-гелем</div>
+          <div class="div32">Да</div>
+          <div class="div33">Размер:</div>
+          <div id="div34"></div>
+          <div class="div35">Холст натуральный</div>
+          <div class="div36">Материал:</div>
+          <div class="div37">Обработка:</div>
+          <div class="div38">Покрытие:</div>
+          <div class="div39">Багетные рамки:</div>
+        </div>
+        <b class="b26">Описание заказа</b>
+        <div class="div40">
+          <div class="child4"></div>
+          <div class="div41">Имя</div>
+        </div>
+        
+        <div class="e-mail">
+          <div class="e-mail-child"></div>
+          <div class="div41">E-mail</div>
+        </div>
+
+        <div class="div42">
+          <div class="child5"></div>
+          <div class="div41">Телефон</div>
+        </div>
+
+        <div class="div44">
+          <div class="child6"></div>
+          <div class="div41">Промо-код</div>
+        </div>
+
+        <div class="div46">
+          <div class="child7"></div>
+          <div class="div41">Комментарий</div>
+        </div>
+
+        <div class="div48">
+          <div class="child8"></div>
+          <div class="div41">Адрес</div>
+        </div>
+
+        <input id="input1" type="text" placeholder="Введите свой адрес" minlength="1" maxlength="1000" />
+        <input id="input2" type="text" placeholder="Введите своё имя" minlength="1" maxlength="1000" />
+        <input id="input3" type="text" placeholder="Введите свою почту" minlength="1" maxlength="1000" />
+        <input id="input4" type="text" placeholder="Введите номер телефона" minlength="1" maxlength="1000" />
+        <input id="input5" type="text" placeholder="Введите промокод если он имеется" minlength="1" maxlength="1000" />
+        <input id="input6" type="text" placeholder="Введите комментарий к заказу" minlength="1" maxlength="1000" />
+        
+
+        <div class="div50">
+          <div class="child9"></div>
+          <div class="div41">С 0:00 до 12:00</div>
+        </div>
+        <!-- <input class="input2" type="checkbox" autofocus /> -->
+
+        <button id="button3" onclick="showInput()">
+          <div class="child10"></div>
+          <b class="b27">Оформить заказ</b>
+        </button>
+        <a class="a5" href="https://vk.com/audios201360217" target="_blank">
+          <div class="child11"></div>
+          <b class="b28">Как мы рисуем?</b>
+        </a>
+        <a class="a6" href="https://vk.com/audios201360217" target="_blank">
+          <div class="child11"></div>
+          <b class="b28">Создание портрета</b>
+        </a>
+        <b class="b30">Или введите вручную</b>
+        <img class="icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\--20210411--1351-1@2x.png" />
+      </div>
+      <div class="div52">
+        <b class="b31">Почему выбирают нас?</b>
+        <div class="div53">
+          <img class="group-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group-5.svg" />
+
+          <div class="div54">
+            <p class="p">Срочное изготовления</p>
+            <p class="p">и бесплатная доставка</p>
+            <p class="p">по Москве</p>
+          </div>
+        </div>
+        <div class="div55">
+          <img class="child13" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group-51.svg" />
+
+          <div class="div56">
+            <p class="p">Самое современное</p>
+            <p class="p">оборудование и</p>
+            <p class="p">технологии</p>
+          </div>
+        </div>
+        <div class="div57">
+          <img class="child14" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group-52.svg" />
+
+          <div class="div58">
+            <p class="p">Мы работаем без</p>
+            <p class="p">предоплаты</p>
+          </div>
+        </div>
+        <div class="div59">
+          <img class="child14" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group-53.svg" />
+
+          <div class="div58">Подарок на выбор каждому клиенту</div>
+        </div>
+      </div>
+
+      <!-- ЧТО МЫ ПРЕДЛАГАЕМ -->
+
+      <div class="div61">
+        <b class="b32">Что мы предлагаем?</b>
+        <div class="div62">
+          <img
+            class="rectangle-icon"
+            alt=""
+            src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\rectangle-9@2x.png"
+          />
+
+          <b class="b33">Коллаж на холсте</b>
+          <div class="div63">
+            Хотите написать интересную историю из любимых фотографий? Мы
+            предлагаем создать оригинальный фотоколлаж, который без слов
+            расскажет о самых ярких моментах вашей жизни!
+          </div>
+          <div class="div64">
+            Необычный красочный коллаж из фото – это всегда уместный подарок,
+            который понравится всем без исключения. Универсальное решение для
+            поздравления с юбилеем, днем рождения, знаменательной датой и просто
+            – для поднятия настроения.
+          </div>
+          <button class="button4">
+            <div class="child10"></div>
+            <a href="https://holst-na-zakaz.ru" target="_blank"><b class="b34">Узнать больше</b></a>
+          </button>
+        </div>
+        <div class="div65">
+          <img class="child17" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\rectangle-10@2x.png" />
+
+          <b class="b35">Портреты в художественных стилях</b>
+          <div class="div66">
+            Портреты могут выполняться в различных стилях: классических,
+            фэнтезийных. Цветовую гамму и стиль оформления подбирает сам
+            заказчик.
+          </div>
+          <div class="div67">
+            Если вы знаете, в каком стиле выполнен интерьер в доме (или офисе)
+            того, кому вы собираетесь подарить фотопортрет, можно создать
+            идеально подходящую в него картину, ограничения только в вашей
+            фантазии, а наши опытные мастера и высокотехнологичное современное
+            оборудование могут воплотить в жизнь любую задумку!
+          </div>
+          <button class="button5">
+            <div class="child10"></div>
+            <a href="https://holst-na-zakaz.ru" target="_blank"><b class="b34">Узнать больше</b></a>
+          </button>
+        </div>
+      </div>
+      <div class="div68">
+        <b class="b32">Этапы изготовления</b>
+        <div class="line-div"></div>
+        <div class="ellipse-parent15">
+          <div class="group-child33"></div>
+          <div class="div69">1</div>
+        </div>
+        <div class="div70">
+          <b class="b38">Заявка и расчет</b>
+          <div class="div71">
+            Пришлите нам фото для обработки, и наши специалисты свяжутся с Вами.
+          </div>
+        </div>
+        <div class="ellipse-parent16">
+          <div class="group-child33"></div>
+          <div class="div69">2</div>
+        </div>
+        <div class="div73">
+          <b class="b38">Согласование макета</b>
+          <div class="div71">
+            Наш дизайнер подготовит макет и отправить вам на согласование.
+          </div>
+        </div>
+        <div class="ellipse-parent17">
+          <div class="group-child33"></div>
+          <div class="div69">3</div>
+        </div>
+        <div class="ellipse-parent18">
+          <div class="group-child33"></div>
+          <div class="div69">4</div>
+        </div>
+        <div class="div77">
+          <b class="b38">Изготовление</b>
+          <div class="div78">
+            <p class="p">
+              После согласования макета ваш заказ поступает в производство.
+            </p>
+          </div>
+        </div>
+        <div class="div79">
+          <b class="b38">Доставка</b>
+          <div class="div80">
+            <p class="p">Бесплатная доставка</p>
+            <p class="p">по Москве. А также</p>
+            <p class="p">возможна доставка в</p>
+            <p class="p">любую точку России.</p>
+          </div>
+        </div>
+        <img class="child19" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\rectangle-11@2x.png" />
+      </div>
+
+      <!-- ЦЕНЫ И РАЗМЕРЫ -->
+
+      <div id="div81">
+        <b class="b32">Цены и размеры</b>
+        <div class="child20"></div>
+        <div class="div82">30х40 см</div>
+        <button class="button6" onclick="scrollToBlock3()">
+          <div class="child21"></div>
+          <b class="b43">Заказать</b>
+        </button>
+        <button class="button7" onclick="scrollToBlock3()">
+          <div class="child21"></div>
+          <b class="b43">Заказать</b>
+        </button>
+        <button class="button8" onclick="scrollToBlock3()">
+          <div class="child21"></div>
+          <b class="b43">Заказать</b>
+        </button>
+        <button class="button9" onclick="scrollToBlock3()">
+          <div class="child21"></div>
+          <b class="b43">Заказать</b>
+        </button>
+        <button class="button10" onclick="scrollToBlock3()">
+          <div class="child21"></div>
+          <b class="b43">Заказать</b>
+        </button>
+        <div class="child26"></div>
+        <div class="div83">60х40 см</div>
+        <img class="icon2" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\6040-1@2x.png" />
+
+        <div class="child27"></div>
+        <img class="icon3" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\5070-1@2x.png" />
+
+        <div class="div84">50х70 см</div>
+        <div class="child28"></div>
+        <div class="div85">90х60 см</div>
+        <img class="icon4" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\9060-1@2x.png" />
+
+        <div class="child29"></div>
+        <div class="div86">120х80 см</div>
+        <img class="icon5" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\12080-1@2x.png" />
+
+        <img class="icon6" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\3040-11@2x.png" />
+
+        <b class="b48">980 руб.</b>
+        <b class="b49">1520 руб.</b>
+        <b class="b50">2032 руб.</b>
+        <b class="b51">2595 руб.</b>
+        <b class="b52">3880 руб.</b>
+        <div class="div87">1577 руб.</div>
+        <div class="div88">2150 руб.</div>
+        <div class="div89">2790 руб.</div>
+        <div class="div90">3494 руб.</div>
+        <div class="div91">5100 руб.</div>
+        <button class="button11">
+          <div class="child30"></div>
+          <b class="b53">Прайс-лист</b>
+        </button>
+      </div>
+
+      <!-- ОТЗЫВЫ НАШИХ КЛИЕНТОВ -->
+      
+      <div class="div92">
+        
+        <b class="b54">Отзывы наших клиентов</b>
+        <div class="div93">
+          <div class="child31"></div>
+          <b class="b55">Мария</b>
+          
+          <div class="child32"></div>
+          <img src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\image\masha.jpg" alt="" id="guest1">
+
+          <div class="div94">
+            Спасибо за вашу работу! Все здорово, довольна картиной на 100% и
+            даже больше. Дизайнер Артем помог подобрать фото, посоветовал
+            стилистику исполнения, чтобы портрет на холсте получился ярким и
+            необычным, как я и хотела. Заказ выполнили очень быстро, всего за 2
+            дня. Доставили мне домой. Плюс в том, что оплачивала уже по факту
+            доставки, то есть я ничем не рисковала. Работой ребят очень
+            довольна, все на высшем уровне – и портрет и обслуживание. Огромное
+            вам спасибо за такую красоту!
+          </div>
+        </div>
+        <div class="div95">
+          <div class="child31"></div>
+
+          <img src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\image\yakov.jpg" alt="" id="guest2">
+          <b class="b55">Яков</b>
+          <div class="child32"></div>
+          <div class="div96">
+            Благодарю за вашу волшебную работу! Печать фото на холсте заказываю
+            уже второй раз и опять все на высоте! Первый раз обращался в эту
+            мастерскую в прошлом году. Тогда заказывал фотоколлаж для родителей
+            в честь серебряной свадьбы. В этот раз поздравлял сестру с днем
+            рождения. Портрет ей очень понравился, тем более что доставку я
+            заказал к ней домой, и это был сюрприз. С удовольствием буду
+            обращаться к вам и дальше.
+          </div>
+        </div>
+
+        <div>
+          <video controls class="videoProcess">
+            <source src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\video\process.mp4">
+          </video>
+
+          <video controls class="videoProcess2">
+            <source src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\video\Портрет на заказ по фотографии - прекрасный подарок.mp4">
+          </video>
+        </div>
+
+       <!-- 
+        <button class="rectangle-button" autofocus></button>
+        <button class="child35" autofocus></button>
+        <div class="child36"></div>
+        <div class="child37"></div>
+        <img class="polygon-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\polygon-1.svg" />
+
+        <img class="child38" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\polygon-1.svg" />
+        -->
+        <button class="button12">
+          <div class="child39"></div>
+          <b class="b57">Читать все отзывы</b>
+        </button>
+      </div>
+
+      <!-- FAQ -->
+
+      <div class="faq">
+        <b class="b38">Ответы на часто задаваемые вопросы</b>
+        <div class="faq1">
+          <a class="a7" href="https://vk.com/audios201360217" target="_blank"><b>Как можно с вами связаться?</b></a>
+
+          <a class="a8" href="https://vk.com/audios201360217" target="_blank"><b>Если у меня нет цифровой фотографии?</b></a>
+
+          <a class="a9" href="https://vk.com/audios201360217" target="_blank"><b>Сколько нужно времени на изготовление заказа?</b></a>
+
+          <a class="a10" href="https://vk.com/audios201360217" target="_blank"><b>Можно увидеть макет до получения заказа?</b></a>
+
+          <a class="a11" href="https://vk.com/audios201360217" target="_blank"><b>Если мне не понравился макет?</b></a>
+
+          <a class="a12" href="https://vk.com/audios201360217" target="_blank"><b>Нужна ли предоплата?</b></a>
+
+          <a class="a13" href="https://vk.com/audios201360217" target="_blank"><b>Какие гарантии вы даете?</b></a>
+
+          <a class="a14" href="https://vk.com/audios201360217" target="_blank"><b>Как оплатить заказ?</b></a>
+
+          <a class="a15" href="https://vk.com/audios201360217" target="_blank"><b>Как получить готовый заказ?</b></a>
+
+          <a class="a16" href="https://vk.com/audios201360217" target="_blank"><b>Если мне нужно получить заказ в другом городе?</b></a>
+
+          <img class="faq-child" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-item" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-inner" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child2" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child3" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child4" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child5" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child6" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+
+          <img class="faq-child7" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector-2.svg" />
+        </div>
+      </div>
+
+      <!-- ОПИСАНИЕ СТОИМОСТИ -->
+
+      <div class="div97">
+        <b class="b54">Что входит в стоимость?</b>
+        <img class="icon7" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\532-1@2x.png" />
+
+        <img class="icon8" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public/60-1@2x.png" />
+
+        <div class="child40"></div>
+        <div class="child41"></div>
+        <div class="child42"></div>
+        <div class="child43"></div>
+        <div class="child44"></div>
+        <div class="child45"></div>
+        <b class="b60">1</b>
+        <b class="b61">4</b>
+        <b class="b62">5</b>
+        <b class="b63">6</b>
+        <b class="b64">2</b>
+        <b class="b65">3</b>
+        <b class="b66">Крепёж</b>
+        <b class="b67">Галерейная натяжка</b>
+        <b class="b68">Ручная отрисовка изображения</b>
+        <b class="b69">Упаковка</b>
+        <b class="b70">Деревянный подрамник</b>
+        <b class="b71">Натуральный хлопковый холст</b>
+        <div class="div98">
+          На каждый портрет устанавливаеться крепеж (крокодил).
+        </div>
+        <div class="div99">
+          В наших портретах мы используем галерейную натяжку. Также можем
+          выполнить студийную натяжку и стандартную натяжку.
+        </div>
+        <div class="div100">
+          <p class="p">
+            Наш художник вручную на графическом планшете отрисуют портрет и
+            пришлем макет на согласование.
+          </p>
+        </div>
+        <div class="div101">
+          Все заказы мы бережно упаковываем в защитную пленку и подарочную
+          упаковку, а также у нас бесплатная доставка по Москве!
+        </div>
+        <div class="div102">
+          Мы используем только подрамники из высокосортной сосны.
+        </div>
+        <div class="div103">
+          Натуральный холст самый прочный из всех видов холстов. Сохраняет цвет
+          на долгие годы.
+        </div>
+        <b class="b72">Дополнительно можно заказать:</b>
+        <div class="child46"></div>
+        <div class="child47"></div>
+        <div class="child48"></div>
+        <div class="child49"></div>
+        <div class="div104">Багетная рама</div>
+        <div class="div105">Покрытие акриловым лаком</div>
+        <div class="div106">Покрытие текстурным гелем</div>
+        <div class="div107">Подарочная упаковка</div>
+      </div>
+
+    <!-- ФУТЕР -->
+
+      <div class="div108">
+        <div class="div109">
+          <div id="child50"></div>
+          <div class="vk-social-logotype-1-parent">
+            <button class="vk-social-logotype-1">
+              <a href="https://vk.com/holstnazakazmsk" target="_blank" bis_skin_checked="1"><img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group.svg" /></a>
+            </button>
+            <a class="a17" href="tel:8-800-302-2532">
+              <p class="p">Бесплатный звонок по РФ:</p>
+              <p class="p17">8 800 302-2532</p>
+              <p class="p">Адрес: г. Москва</p>
+              <p class="p">МКАД 24 км вл. 3</p>
+            </a>
+            <div class="c-1000">ПН-ПТ - c 10:00 до 18:00</div>
+            <a class="a18" target="blank" href="https://holst-na-zakaz.ru/requisites.pdf" rel="nofollow" download="" bis_skin_checked="1">Скачать реквизиты</a>
+            <a class="a19" target="blank" href="https://holst-na-zakaz.ru/privacy/" bis_skin_checked="1">Политика конфиденциальности</a>
+            <a class="a20" target="blank" href="https://holst-na-zakaz.ru/offert/" bis_skin_checked="1">Условия публичной оферты</a>
+            <a class="a21" target="blank" href="https://holst-na-zakaz.ru/akcii/" bis_skin_checked="1">Узнайте о скидках и акциях</a>
+            <a class="a22" target="blank" href="https://holst-na-zakaz.ru/sotrudnichestvo/" bis_skin_checked="1">Для сотрудничества</a>
+            <b class="b38">Контакты</b>
+            <b class="b74">График работы</b>
+            <b class="b75">Принимаем к оплате</b>
+            <b class="b76">Доставляем по РФ</b>
+            <b class="b77">Подписывайтесь на нас</b>
+            <b class="b78">Реквизиты</b>
+            <button class="button13">
+              <div class="child51"></div>
+              <b class="b79">Схема проезда</b>
+            </button>
+            <img
+              class="whatsapp-1-11"
+              alt=""
+              src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\whatsapp-1-11.svg"
+            />
+
+            <a class="a23" href="tel:+7 968 603-85-98">+7 968 603-85-98</a>
+            <a class="a24" href="tel:+7 (495) 115-38-16"
+              >+7 (495) 115-38-16 (Москва)</a
+            >
+            <a class="a25" href="tel:+7 (812) 408-08-17"
+              >+7 (812) 408-08-17 (Санкт-Петербург)</a
+            >
+            <a
+              class="zakazholst-na-zakazru1"
+              href="mailto:zakaz@holst-na-zakaz.ru"
+              >zakaz@holst-na-zakaz.ru</a
+            >
+            <a class="holst-na-zakazru" href="mailto:Holst-na-zakaz.ru"
+              >Holst-na-zakaz.ru</a
+            >
+            <img
+              class="telephone-1-icon1"
+              alt=""
+              src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\telephone-11.svg"
+            />
+
+            <img
+              class="telephone-2-icon"
+              alt=""
+              src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\telephone-11.svg"
+            />
+
+            <img class="mail-1-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\mail-11.svg" />
+
+            <img class="skype-1-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\skype-1.svg" />
+
+            <img class="cdek-1-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\cdek-1.svg" />
+
+            <img class="ems-1-1-icon" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\ems1-1.svg" />
+
+            <button class="instagram-1-1">
+              
+              <img class="vector-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector.svg" /></a>
+
+              <img class="vector-icon2" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector1.svg" />
+              
+              <img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector2.svg" />
+            </button>
+            <button class="facebook-logo-1">
+              <img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group1.svg" />
+            </button>
+            <button class="youtube-1-1">
+              <img class="vector-icon4" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector3.svg" />
+              <a href="https://www.youtube.com/channel/UCmMxngnmaLF89pmolo1VqYQ" target="_blank" bis_skin_checked="1">
+              <img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector4.svg" /></a>
+            </button>
+            <button class="twitter-1">
+              <a href="https://twitter.com/o6d7ADK84neabqL?lang=en" target="_blank" bis_skin_checked="1">
+              <img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\vector5.svg" /></a>
+            </button>
+            <img class="group-child37" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group-42.svg" />
+
+            <button class="odnoklassniki-logo-1">
+              <a href="https://ok.ru/group/55833923944548" target="_blank" bis_skin_checked="1">
+              <img class="group-icon1" alt="" src="C:\ггпк программирование лекции\3 курс\ПССИП\ПРАКТИКА\public\group2.svg" /></a>
+            </button>
+            <div class="holst-na-zakazru-infoholst">
+              © Холст на заказ, 2017-2021 | holst-na-zakaz.ru |
+              info@holst-na-zakaz.ru
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="toTop"> ^ Наверх </div >
+      <button id="consultant-button" onclick="openConsultantForm()">Получить консультацию</button>
+
+      <form id="consultant-form">
+        <button id="close-button" onclick="closeConsultantForm()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <h3>Консультант: Григорий</h3>
+        <label>Здравствуйте, меня зовут Григорий.<br>Я онлайн-консультант на сайте.<br>Чем я могу вам помочь?<br></label>
+        <br>
+        <label>Ваше имя </label><input type="text"/ class="name-input"><br><br>
+        <label>Номер телефона </label><input type="text"/><br><br>
+        <label>Почта </label><input type="text"/><br><br>
+        <label>В чем требуется помочь </label><input type="text"/><br><br>
+        <button type="submit" onclick="closeConsultantForm()">Отправить</button>
+      </form>
+  </body>
+</html>
